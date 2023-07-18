@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Namaste React</title>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Below is the simple Hello world program using html -->
+      <h1>Hello World!</h1>
+    </div>
+
+    <!-- Lets create a similar Hello world program using only JavaScript -->
+    <script>
+      const headingEl = document.createElement("h1");
+      headingEl.innerHTML = "Hello world from JavaScript!";
+      const rootEl = document.getElementById("root");
+      rootEl.appendChild(headingEl);
+    </script>
+
+    <!-- Lets bring react into our code. Below two script tags bring react into our code. It has given us all the super power of react and also powers to manipulate DOM in browser using react -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <!-- Let's create our first Hello world app using react-->
+    <!-- uncomment the line below //code:  -->
+    <script>
+      //Description:
+      // Just like we were using document.createElement("h1"); in javascript to create element, Here in React we'll use React.createElement() to create an element.
+      // Also, creating an element in react using createElement("") is core react thing and hence it comes from line 26 (src="https://unpkg.com/react@18/umd/react.development.js) which is actually the React library
+      // React.createElement('tag', object, content) object is where we give attributes to our tag like id, class, src and many more(icluding our custom attributes)
+
+      // Code:
+      // const heading = React.createElement("h1", {}, "Hello world from React!");
+      // Note here that React.createElement() doesn't actually create a element or html tag as such. Rather it creates an object with all element details. Uncomment below console to see
+      // console.log(heading);
+
+      //Description:
+      // Now we need to insert heading into our #root element in body and hence in DOM tree.
+      // Here things work a little different in React than in normal JavaScript. We need to tell react about what is the #root where we need to render our heading. Hence we need to create a root inside react where we can render our heading & other stuff
+      // creating root & rendering something inside it in react comes from ReactDOM library and hence it comes from line 30(src="https://unpkg.com/react-dom@18/umd/react-dom.development.js").
+      // Note that root is the place where all the react code will run
+
+      //code:
+      // const root = ReactDOM.createRoot(rootEl);
+      // Now let's render our heading into root of react
+      //code:
+      // root.render(heading);
+
+      // we can't keep simply coding all our react/JavaScript code in thing one single file. Hence let's split it in another app.js file. I'll copy same react code in this script to App.js file. Go to App.js to understand further
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
